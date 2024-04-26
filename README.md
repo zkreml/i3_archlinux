@@ -56,7 +56,7 @@ Pro stažení a instalaci projektu postupujte podle následujících kroků:
    ```
 
 
-## Složka <a href="https://git.archoslinux.cz/archos/Archlinux_I3/src/branch/master/utilities" target="_blank">utilities</a>
+## Složka <a href="https://git.arch-linux.cz/Archos/Archlinux_I3/src/branch/main/utilities" target="_blank">utilities</a>
 
 Tato složka obsahuje pomocné skripty, které rozšiřují funkcionalitu systému. Zde je přehled skriptů a jejich funkcí:
 
