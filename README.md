@@ -86,7 +86,7 @@ ${execi 600 /cesta/k/check_updates.sh}
 &#x2022;Pro integraci výstupu skriptu update_check.sh do i3blocks, přidejte následující blok do vašeho konfiguračního souboru i3blocks:
  ```bash
 [updates]
-command=/cesta/k/skripty/update_check.sh
+command=/cesta/k/skripty/check_updates
 interval=600
  ```
 
