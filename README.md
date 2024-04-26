@@ -90,7 +90,7 @@ command=/cesta/k/skripty/update_check.sh
 interval=600
  ```
 
- - **system_updates.sh** - Tento skript slouží k pravidelnému aktualizování systému a aplikací v Arch Linuxu. Skript zkontroluje dostupné aktualizace a provede je bez uživatelského zásahu. Pro zajištění, že uživatel bude informován o průběhu aktualizace, skript může zobrazovat notifikace pomocí desktopového notifikačního systému.
+ - **update_notifier.sh** - Tento skript slouží k pravidelnému aktualizování systému a aplikací v Arch Linuxu. Skript zkontroluje dostupné aktualizace a provede je bez uživatelského zásahu. Pro zajištění, že uživatel bude informován o průběhu aktualizace, skript může zobrazovat notifikace pomocí desktopového notifikačního systému.
 
  ### Nastavení periodických aktualizací pomocí crontab
 
@@ -102,7 +102,7 @@ interval=600
 2. Přidejte následující řádek pro spouštění system_updates.sh každou hodinu.
 
   ```bash
-/59 * * * * /cesta/k/system_updates.sh
+/59 * * * * /cesta/k/update_notifier.sh
   ```
 
 ### Přidání notifikací do i3 config
@@ -117,7 +117,7 @@ interval=600
 &#x2022;  Pro i3 window manager, můžete zahrnout skript pro automatické spuštění při startu i3, přidejte následující řádek do vaší konfiguračního souboru i3:
 
   ```bash
-exec_always --no-startup-id /path/to/system_updates.sh
+exec_always --no-startup-id /path/to/update_notifier.sh
   ```
 
 &#x2022; Pro snadné spouštění aktualizací můžete přidat klávesovou zkratku do vašeho i3 konfiguračního souboru:
