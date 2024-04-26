@@ -1,29 +1,22 @@
 #!/bin/bash
-# Název: Update Notifier
-# Popis: Skript pro kontrolu dostupnosti systémových aktualizací na Arch Linuxu a záznam do logu.
+#
+##################################################################################################################
+# Written to be used on 64 bits computers
+# Author 	: 	Archos
+# Website 	: 	https://arch-linux.cz
+##################################################################################################################
+##################################################################################################################
+#echo "Skript spuštěn v: $(date)" >> /cesta/k/log.txt 
 
-# Umístění log souboru
-LOG_FILE="$HOME/update_notifier.log"
-
-# Zaznamenání data a času spuštění skriptu
-echo "Skript spuštěn v: $(date)" >> $LOG_FILE
-
-# Získání seznamu dostupných aktualizací
+# Získání seznamu aktualizací
 updates=$(checkupdates)
-update_count=$(echo "$updates" | wc -l)
 
-# Zaznamenání výsledku kontroly
-echo "Kontrola aktualizací provedena v: $(date)" >> $LOG_FILE
+# Zkontroluj, jestli jsou dostupné nějaké aktualizace
+if [[ ! -z "$updates" ]]; then
+    # Počet dostupných aktualizací
+    count=$(echo "$updates" | wc -l)
 
-# Kontrola, zda jsou dostupné nějaké aktualizace
-if [[ "$update_count" -gt 0 ]]; then
-    echo "$update_count aktualizací je dostupných. Spusťte terminál a zadejte 'sudo pacman -Syu' pro instalaci." >> $LOG_FILE
-    # Zobrazení notifikace, pokud jsou aktualizace dostupné
-    notify-send "Dostupné aktualizace" "$update_count aktualizací je dostupných. Spusťte terminál a zadejte 'sudo pacman -Syu' pro instalaci."
-else
-    echo "Žádné aktualizace nejsou dostupné." >> $LOG_FILE
+    # Zobrazení notifikace
+    notify-send "Dostupné aktualizace" "$count aktualizací je dostupných. Spusťte terminál a zadejte 'sudo pacman -Syu' pro instalaci."
 fi
-
-# Výstup pro možné použití v terminálu nebo Conky
-echo "$update_count updates available"
 
