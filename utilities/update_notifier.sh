@@ -1,12 +1,15 @@
 #!/bin/bash
-#
+
 ##################################################################################################################
 # Written to be used on 64 bits computers
-# Author 	: 	Archos
-# Website 	: 	https://arch-linux.cz
+# Author    :   Archos
+# Website   :   https://arch-linux.cz
 ##################################################################################################################
 ##################################################################################################################
-#echo "Skript spuštěn v: $(date)" >> /cesta/k/log.txt 
+# Nastaví DISPLAY pro GUI aplikace spouštěné z cronu
+export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1000/bus"
+
+echo "Skript spuštěn v: $(date)" >> #/cest/k/log.txt 
 
 # Získání seznamu aktualizací
 updates=$(checkupdates)
