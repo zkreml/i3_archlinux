@@ -145,7 +145,12 @@ Pro zjištění, který uživatel má UID 1000, můžete použít příkaz id s 
  ```bash
  id -nu 1000
  ```
- Tento příkaz vám vrátí uživatelské jméno spojené s UID 1000.
+Tento příkaz vám vrátí uživatelské jméno spojené s UID 1000.
+Pro  zjištění aktuálního uživatelského ID (UID) přihlášeného uživatele můžete použít příkaz `echo $UID`. Tento příkaz vypíše UID uživatele, který je právě přihlášen a spouští skript nebo příkazovou řádku. Je to jednoduchý a přímý způsob, jak zjistit UID:
+
+  ```bash
+  echo $UID
+  ```
 
  ### Nastavení periodických aktualizací pomocí crontab
 
