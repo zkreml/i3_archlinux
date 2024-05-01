@@ -96,8 +96,6 @@ Projekt obsahuje následující konfigurační složky, které jsou součástí 
 ## Použití
 
 
-
-
 ## Složka <a href="https://git.arch-linux.cz/Archos/Archlinux_I3/src/branch/main/utilities" target="_blank">utilities</a>
 
 Tato složka obsahuje pomocné skripty, které rozšiřují funkcionalitu systému. Zde je přehled skriptů a jejich funkcí:
