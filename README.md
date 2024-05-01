@@ -29,11 +29,12 @@ Pro stažení a instalaci projektu postupujte podle následujících kroků:
   ```bash
   find . -type f -name "*.sh" -exec chmod +x {} \;
  ```
+
 ## Popis skriptů a jejich instalace
 
 - **install_packages.sh** - Tento skript instaluje základní balíčky, které jsou potřebné pro systém a pro správné fungování správce oken i3. Seznam balíčků k instalaci je definován v souboru `packages-repository.txt`. Spustí se příkazem:
 
-```bash
+ ```bash
 ./install_packages.sh
  ```
 
