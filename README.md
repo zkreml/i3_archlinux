@@ -36,9 +36,9 @@ Pro stažení a instalaci projektu postupujte podle následujících kroků:
 
 Spustí se příkazem:
 
-```bash
-./install_packages.sh
-```
+  ```bash
+  ./install_packages.sh
+  ```
 
 - **install_aur_package.sh** - Tento skript je určen pro instalaci balíčků z Arch User Repository (AUR). Nejprve ověří, zda je nainstalován `git` a pomocník pro AUR (`yay`). Pokud nejsou nainstalovány, skript je automaticky nainstaluje. Dále instaluje balíčky specifikované v proměnné `package_name`. Výchozí nastavení zahrnuje instalaci aplikací `autotiling` a `picom`, které slouží k:
   
