@@ -1,16 +1,16 @@
 #!/bin/bash
 ##################################################################################################################
 # Written to be used on 64 bits computers
-# Author 	: 	Archos
-# Website 	: 	https://arch-linux.cz
+# Author    :    Archos
+# Website    :    https://arch-linux.cz
 ##################################################################################################################
 ##################################################################################################################
 #
 # PEČLIVĚ SKRIPT ZKONTROLUJTE. SPUŠTĚNÍ JE NA VAŠE VLASTNÍ RIZIKO.
 #
 ##################################################################################################################
-# Definice cesty k repozitáři a domovského adresáře
-REPO_PATH="/path/to/cloned/repository"
+# Dynamické určení cesty k repozitáři a domovského adresáře
+REPO_PATH=$(dirname "$0")
 HOME_PATH="$HOME"
 
 # Funkce pro kopírování souborů
@@ -33,3 +33,4 @@ copy_files "$REPO_PATH/.config/rofi" "$HOME_PATH/.config/rofi"
 copy_files "$REPO_PATH/.config/xfce4/terminal" "$HOME_PATH/.config/xfce4/terminal"
 
 echo "Konfigurační soubory byly úspěšně přesunuty."
+
