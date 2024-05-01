@@ -28,7 +28,7 @@ Pro stažení a instalaci projektu postupujte podle následujících kroků:
 - Pro změnu oprávnění všech souborů s příponou `.sh` ve stávajícím adresáři i v podadresářích:
   ```bash
   find . -type f -name "*.sh" -exec chmod +x {} \;
- 
+ ```
  ## Popis skriptů a jejich instalace
 
 - **install_packages.sh** - Tento skript instaluje základní balíčky, které jsou potřebné pro systém a pro správné fungování správce oken i3. Seznam balíčků k instalaci je definován v souboru `packages-repository.txt`. Spustí se příkazem:
@@ -46,7 +46,6 @@ Pro stažení a instalaci projektu postupujte podle následujících kroků:
   ./install_aur_package.sh
   ```
  
-  ## Popis skriptů a jejich instalace
 
 - **pacman_packages.sh** - Tento skript je určen pro instalaci širokého spektra aplikací, které osobně preferuji pro každodenní použití v Arch Linuxu. Seznam aplikací obsahuje esenciální nástroje jako Firefox a Vim, multimediální aplikace jako SMPlayer a VLC, nástroje pro správu souborů jako Thunar a PCManFM, kancelářský balík LibreOffice a mnoho dalších. Skript dále aktualizuje systém před instalací balíčků, aby zajistil, že jsou instalovány nejnovější dostupné verze. Skript je nastaven tak, aby nevyžadoval potvrzení během instalace, což zrychluje proces. 
 
@@ -54,7 +53,15 @@ Pro stažení a instalaci projektu postupujte podle následujících kroků:
   ```bash
   ./pacman_packages.sh
    ```
- 
+ - **move_config_files.sh** Tento skript, automatizuje přesun konfiguračních souborů z naklonovaného repozitáře do odpovídajících složek v domovském adresáři.
+ Upravte cesty: Upravte proměnné REPO_PATH a HOME_PATH tak, aby odpovídaly vašim cestám k naklonovanému repozitáři a vašemu domovskému adresáři.
+Spusťte skript: Spusťte skript z terminálu příkazem 
+
+```bash
+  ./move_config_files.sh
+   ```
+
+
 ## Struktura Konfigurační Složky
 
 Projekt obsahuje následující konfigurační složky, které jsou součástí adresáře `.config`. Každá složka má specifický účel:
