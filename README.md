@@ -129,7 +129,23 @@ command=/cesta/k/skripty/check_updates
 interval=600
  ```
 
- - **update_notifier.sh** - Tento skript slouží k pravidelnému aktualizování systému a aplikací v Arch Linuxu. Skript zkontroluje dostupné aktualizace a provede je bez uživatelského zásahu. Pro zajištění, že uživatel bude informován o průběhu aktualizace, skript může zobrazovat notifikace pomocí desktopového notifikačního systému.
+ - **update_notifier.sh** - ## Detaily Skriptu
+
+### update_notifier.sh
+Tento skript kontroluje dostupné aktualizace pro systém Arch Linux a informuje uživatele pomocí desktopové notifikace. Skript je optimalizován pro spouštění z cronu, což vyžaduje speciální nastavení pro správnou funkčnost GUI notifikací:
+
+- `export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1000/bus"`: Tento příkaz nastaví proměnnou prostředí, která umožňuje skriptu komunikovat s desktopovým prostředím uživatele a zobrazovat notifikace, i když je spuštěný z cronu. Bez této proměnné by skript v cronu nebyl schopen zobrazit GUI notifikace, protože cron typicky neběží v uživatelském desktopovém prostředí.
+
+Tento řádek je klíčový pro zajištění, že skript bude moci interagovat s desktopovým prostředím a zobrazovat notifikace, i když je spuštěn z prostředí, které není připojeno k uživatelskému grafickému prostředí, jako je cron.
+
+### Zjištění uživatele podle UID
+
+Pro zjištění, který uživatel má UID 1000, můžete použít příkaz id s možností -nu pro zobrazení jména uživatele:
+
+ ```bash
+ id -nu 1000
+ ```
+ Tento příkaz vám vrátí uživatelské jméno spojené s UID 1000.
 
  ### Nastavení periodických aktualizací pomocí crontab
 
