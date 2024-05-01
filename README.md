@@ -28,7 +28,7 @@ Pro stažení a instalaci projektu postupujte podle následujících kroků:
 - Pro změnu oprávnění všech souborů s příponou `.sh` ve stávajícím adresáři i v podadresářích:
   ```bash
   find . -type f -name "*.sh" -exec chmod +x {} \;
- ```
+  ```
 
 ## Popis skriptů a jejich instalace
 
