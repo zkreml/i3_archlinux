@@ -45,7 +45,7 @@ Pro stažení a instalaci projektu postupujte podle následujících kroků:
   ```bash
   ./install_aur_package.sh
   ```
-
+ 
   ## Popis skriptů a jejich instalace
 
 - **pacman_packages.sh** - Tento skript je určen pro instalaci širokého spektra aplikací, které osobně preferuji pro každodenní použití v Arch Linuxu. Seznam aplikací obsahuje esenciální nástroje jako Firefox a Vim, multimediální aplikace jako SMPlayer a VLC, nástroje pro správu souborů jako Thunar a PCManFM, kancelářský balík LibreOffice a mnoho dalších. Skript dále aktualizuje systém před instalací balíčků, aby zajistil, že jsou instalovány nejnovější dostupné verze. Skript je nastaven tak, aby nevyžadoval potvrzení během instalace, což zrychluje proces. 
@@ -54,6 +54,35 @@ Pro stažení a instalaci projektu postupujte podle následujících kroků:
   ```bash
   ./pacman_packages.sh
    ```
+ 
+## Struktura Konfigurační Složky
+
+Projekt obsahuje následující konfigurační složky, které jsou součástí adresáře `.config`. Každá složka má specifický účel:
+
+### `/dunst`
+- **Účel**: Obsahuje konfigurační soubory pro `dunst`, což je démon pro zobrazení notifikací v systému. Umožňuje přizpůsobení vzhledu a chování notifikací.
+
+### `/gtk-3.0`
+- **Účel**: Tato složka obsahuje konfigurační soubory pro GTK+ 3 aplikace, což zahrnuje nastavení témat, ikon a dalších grafických prvků.
+
+### `/i3`
+- **Účel**: Hlavní konfigurační soubory pro správce oken i3. Zde naleznete soubory pro nastavení klávesových zkratek, vzhledu a dalších funkcí i3.
+
+### `/i3/scripts`
+- **Účel**: Skripty specifické pro i3, které mohou zahrnovat utility pro správu okenních uspořádání, automatické spouštění aplikací a další.
+
+### `/nano`
+- **Účel**: Konfigurační soubory pro textový editor Nano, včetně nastavení syntaxového zvýraznění a dalších editorových preferencí.
+
+### `/rofi`
+- **Účel**: Složka pro `rofi`, moderní zástupce tradičního dialogového okna pro spouštění programů. Obsahuje konfigurace, které definují vzhled a chování tohoto nástroje.
+
+### `/xfce4/terminal`
+- **Účel**: Nastavení pro terminál Xfce4, které umožňují přizpůsobení schémat barev, písma a dalších aspektů vzhledu terminálu.
+
+## Použití
+
+
 
 
 ## Složka <a href="https://git.arch-linux.cz/Archos/Archlinux_I3/src/branch/main/utilities" target="_blank">utilities</a>
