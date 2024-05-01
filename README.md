@@ -69,7 +69,7 @@ Spusťte skript: Spusťte skript z terminálu příkazem
 
 ## Struktura Konfigurační Složky
 
-Projekt obsahuje následující konfigurační složky, které jsou součástí adresáře `.config`. Každá složka má specifický účel:
+Projekt obsahuje klíčové konfigurační složky v adresáři .config, které jsou zásadní pro nastavení a personalizaci vašeho systému. Mnohé z těchto konfiguračních souborů jsou inspirovány nebo přímo převzaty z projektu EndeavourOS, což přináší osvědčené nastavení pro Arch Linux a jeho deriváty. Každá složka má specifický účel:
 
 ### `/dunst`
 - **Účel**: Obsahuje konfigurační soubory pro `dunst`, což je démon pro zobrazení notifikací v systému. Umožňuje přizpůsobení vzhledu a chování notifikací.
