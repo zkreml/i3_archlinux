@@ -66,6 +66,52 @@ Spusťte skript: Spusťte skript z terminálu příkazem
   ./move_config_files.sh
    ```
 
+## Automatická instalace a konfigurace
+
+Pro uživatele, kteří chtějí rychle a jednoduše nastavit své prostředí i3, poskytujeme skript `auto_install_i3.sh`. Tento skript automatizuje proces instalace potřebných balíčků, nastavení AUR helperu, přesunu konfiguračních souborů do příslušných adresářů a další potřebné kroky.
+
+### Příprava před instalací
+
+Před spuštěním skriptu `auto_install_i3.sh` je doporučeno:
+- Zkontrolovat a případně upravit skript `pacman_packages.sh` pro zahrnutí nebo vynechání specifických aplikací, které chcete nainstalovat. Tento krok je důležitý, protože výchozí seznam aplikací nemusí vyhovovat všem uživatelům.
+
+### Jak používat skript `auto_install_i3.sh`
+
+1. Stáhněte si repozitář do vašeho systému pomocí příkazu:
+
+   ```bash
+   git clone https://git.archoslinux.cz/archos/Archlinux_I3.git
+   ```
+
+2. Přejděte do adresáře repozitáře:
+
+  ```bash
+  cd Archlinux_I3
+  ```
+
+3. Nastavte skript jako spustitelný:
+
+  ```bash
+  chmod +x auto_install_i3.sh
+  ```
+
+4. Spusťte skript:
+
+  ```bash
+  ./auto_install_i3.sh
+  ```
+  Po dokončení instalace skript vás vyzve k restartování systému, aby byly změny aplikovány. Ujistěte se, že jste uložili všechny neuložené práce před restartováním systému.
+
+## Co skript dělá
+
+Skript auto_install_i3.sh provádí následující úkony:
+
+    Instaluje základní balíčky potřebné pro běh i3 a doplňkové aplikace.
+    Instaluje a konfiguruje AUR helper pro snazší správu balíčků z AUR.
+    Přesouvá konfigurační soubory z repozitáře do příslušných adresářů ve vašem domovském adresáři.
+    Nastavuje programy jako dunst a rofi pro správu notifikací a spouštění aplikací.
+
+
 
 ## Struktura Konfigurační Složky
 
