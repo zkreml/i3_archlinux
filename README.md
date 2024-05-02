@@ -106,10 +106,10 @@ Před spuštěním skriptu `auto_install_i3.sh` je doporučeno:
 
 Skript auto_install_i3.sh provádí následující úkony:
 
-    Instaluje základní balíčky potřebné pro běh i3 a doplňkové aplikace.
-    Instaluje a konfiguruje AUR helper pro snazší správu balíčků z AUR.
-    Přesouvá konfigurační soubory z repozitáře do příslušných adresářů ve vašem domovském adresáři.
-    Nastavuje programy jako dunst a rofi pro správu notifikací a spouštění aplikací.
+ - Instaluje základní balíčky potřebné pro běh i3 a doplňkové aplikace.
+ - Instaluje a konfiguruje AUR helper pro snazší správu balíčků z AUR.
+ - Přesouvá konfigurační soubory z repozitáře do příslušných adresářů ve vašem domovském adresáři.
+ - Nastavuje programy jako dunst a rofi pro správu notifikací a spouštění aplikací.
 
 
 
