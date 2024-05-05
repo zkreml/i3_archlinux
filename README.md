@@ -229,7 +229,7 @@ exec_always --no-startup-id /path/to/update_notifier.sh
 &#x2022; Pro snadné spouštění aktualizací můžete přidat klávesovou zkratku do vašeho i3 konfiguračního souboru:
 
   ```bash
-bindsym $mod+Shift+u exec i3-sensible-terminal -e "sudo pacman -Syu"
+bindsym $mod+Shift+u exec i3-sensible-terminal -e "yay -Syu"
   ```
   
 
