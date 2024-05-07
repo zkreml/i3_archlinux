@@ -80,7 +80,7 @@ Před spuštěním skriptu `auto_install_i3.sh` je doporučeno:
 1. Stáhněte si repozitář do vašeho systému pomocí příkazu:
 
    ```bash
-   git clone https://git.archoslinux.cz/archos/Archlinux_I3.git
+   git clone git clone https://git.arch-linux.cz/Archos/Archlinux_I3.git
    ```
 
 2. Přejděte do adresáře repozitáře:
