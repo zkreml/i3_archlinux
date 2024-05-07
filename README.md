@@ -13,7 +13,7 @@ Pro stažení a instalaci projektu postupujte podle následujících kroků:
 
 1. Klonujte repozitář:
    ```bash
-   git clone https://git.archoslinux.cz/archos/Archlinux_I3.git
+   git clone https://github.com/zkreml/i3_archlinux.git
     ```
 2. Přejděte do adresáře repozitáře:
    ```bash
@@ -80,7 +80,7 @@ Před spuštěním skriptu `auto_install_i3.sh` je doporučeno:
 1. Stáhněte si repozitář do vašeho systému pomocí příkazu:
 
    ```bash
-   git clone https://git.archoslinux.cz/archos/Archlinux_I3.git
+   git clone https://github.com/zkreml/i3_archlinux.git
    ```
 
 2. Přejděte do adresáře repozitáře:
