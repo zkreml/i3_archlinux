@@ -13,7 +13,7 @@ Pro stažení a instalaci projektu postupujte podle následujících kroků:
 
 1. Klonujte repozitář:
    ```bash
-   git clone https://git.archoslinux.cz/archos/Archlinux_I3.git
+   git clone https://git.arch-linux.cz/Archos/Archlinux_I3.git
     ```
 2. Přejděte do adresáře repozitáře:
    ```bash
