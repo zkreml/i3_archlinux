@@ -2,6 +2,8 @@
 
 Tento projekt poskytuje skripty pro rychlou instalaci a konfiguraci základních aplikací a nástrojů nezbytných po instalaci Arch Linuxu. Hlavním cílem je ulehčit nastavení prostředí se správcem oken i3, aby byl váš systém ihned připraven k použití.
 
+![i3-setup-final-look](https://github.com/zkreml/i3_archlinux/blob/main/screenshot/i3.png)
+
 ## Hlavní rysy
 
 - **Automatizované Skripty**: Skripty pro jednoduchou a rychlou instalaci aplikací a nástrojů.
