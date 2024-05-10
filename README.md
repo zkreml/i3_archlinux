@@ -2,9 +2,7 @@
 
 Tento projekt poskytuje skripty pro rychlou instalaci a konfiguraci základních aplikací a nástrojů nezbytných po instalaci Arch Linuxu. Hlavním cílem je ulehčit nastavení prostředí se správcem oken i3, aby byl váš systém ihned připraven k použití.
 
-<p align="center">
-<img src="https://mycloud.arch-linux.cz/s/mLgGLHfnFcj9iCm">
-</p>
+![i3-setup-final-look](https://git.arch-linux.cz/Archos/Archlinux_I3/src/branch/main/screenshot/i3.png)
 
 ## Hlavní rysy
 
