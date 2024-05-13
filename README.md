@@ -234,4 +234,26 @@ exec_always --no-startup-id /path/to/update_notifier.sh
 bindsym $mod+Shift+u exec i3-sensible-terminal -e "yay -Syu"
   ```
   
+### Nastavení tapety v i3 pomocí feh
 
+Pro nastavení tapety na pracovní ploše i3 můžete použít nástroj feh. feh je lehký prohlížeč obrázků, který lze také použít k nastavení pozadí plochy.
+
+#### Nastavení tapety
+
+Uložení Obrázku: Nejprve umístěte obrázek, který chcete použít jako tapetu, do vhodné složky, například do ~/Pictures/Wallpapers.
+
+Editace Konfiguračního Souboru i3: Otevřete konfigurační soubor i3, obvykle umístěný v ~/.config/i3/config.
+
+Přidání Příkazu pro Nastavení Tapety: Přidejte následující řádek do konfiguračního souboru, který zajistí, že feh nastaví tapetu při každém spuštění i3. Náhradou path_to_your_wallpaper doplňte cestu k vašemu obrázku:
+
+```bash
+exec_always --no-startup-id feh --bg-scale /path_to_your_wallpaper
+```
+
+- **--bg-scale** zajistí, že obrázek bude přizpůsoben velikosti vaší obrazovky.
+- **exec_always** znamená, že feh se spustí pokaždé, když i3 začne nebo se restartuje.
+
+
+### Aplikace změn
+
+Pro aplikaci změn restartujte i3. To můžete provést pomocí klávesové zkratky [mod+Shift+r] (mod klávesa obvykle odpovídá Windows klávese nebo Alt klávese, v závislosti na vaší konfiguraci).
