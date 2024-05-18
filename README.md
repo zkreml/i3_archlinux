@@ -257,3 +257,29 @@ exec_always --no-startup-id feh --bg-scale /path_to_your_wallpaper
 ### Aplikace změn
 
 Pro aplikaci změn restartujte i3. To můžete provést pomocí klávesové zkratky [mod+Shift+r] (mod klávesa obvykle odpovídá Windows klávese nebo Alt klávese, v závislosti na vaší konfiguraci).
+
+### Co je Conky?
+
+Conky je lehký monitorovací systém pro X Window System. Je navržen tak, aby byl maximálně efektivní, přizpůsobitelný a vzhledově příjemný. Conky dokáže zobrazovat informace prostřednictvím textového i grafického uživatelského rozhraní a lze ho snadno integrovat do mnoha desktopových prostředí, včetně i3.
+
+#### Instalace Conky
+
+Conky můžete nainstalovat pomocí správce balíčků vaší distribuce. Pro Arch Linux použijte:
+
+```bash
+ sudo pacman -S conky
+```
+    
+#### Konfigurace Conky
+
+Konfigurační soubory Conky jsou obvykle umístěny v ~/.config/conky/ nebo přímo v domovském adresáři uživatele jako ~/.conkyrc. Konfigurace Conky je velmi flexibilní – od jednoduchého textového výpisu po komplexní grafické ukazatele.
+
+#### Spuštění Conky s i3
+
+Pro automatické spuštění Conky při startu i3 můžete do vašeho konfiguračního souboru i3 (typicky ~/.config/i3/config) přidat následující řádek:
+
+```bash 
+exec_always --no-startup-id conky
+```
+
+Tento příkaz zajistí, že Conky bude spuštěno vždy po spuštění nebo restartu i3.
