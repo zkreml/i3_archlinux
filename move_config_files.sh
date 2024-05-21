@@ -1,16 +1,13 @@
 #!/bin/bash
+
 ##################################################################################################################
 # Written to be used on 64 bits computers
-# Author    :    Archos
-# Website    :    https://arch-linux.cz
+# Author    :   Archos
+# Website   :   https://arch-linux.cz
 ##################################################################################################################
 ##################################################################################################################
-#
-# PEČLIVĚ SKRIPT ZKONTROLUJTE. SPUŠTĚNÍ JE NA VAŠE VLASTNÍ RIZIKO.
-#
-##################################################################################################################
-# Dynamické určení cesty k repozitáři a domovského adresáře
-REPO_PATH=$(dirname "$0")
+# Definice cesty k repozitáři a domovského adresáře
+REPO_PATH="/path/to/cloned/repository"
 HOME_PATH="$HOME"
 
 # Funkce pro kopírování souborů
@@ -21,6 +18,8 @@ copy_files() {
     mkdir -p "$dst_dir"
     # Kopíruje všechny soubory z source do destination
     cp -ar $src_dir/* $dst_dir/
+    # Nastaví spustitelná oprávnění pro všechny skripty ve složce
+    find $dst_dir -type f -name "*.sh" -exec chmod +x {} \;
 }
 
 # Příklad kopírování konfiguračních souborů
