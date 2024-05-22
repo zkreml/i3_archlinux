@@ -1,36 +1,40 @@
 #!/bin/bash
-##################################################################################################################
-# Written to be used on 64 bits computers
-# Author    :    Archos
-# Website    :    https://arch-linux.cz
-##################################################################################################################
-##################################################################################################################
-#
-# PEČLIVĚ SKRIPT ZKONTROLUJTE. SPUŠTĚNÍ JE NA VAŠE VLASTNÍ RIZIKO.
-#
-##################################################################################################################
-echo "Zahajujeme instalaci a konfiguraci vašeho i3 desktopu."
 
-# Kontrola oprávnění
-if [ "$(id -u)" -ne 0 ]; then
-  echo "Tento skript vyžaduje superuživatelská práva."
-  exit 1
-fi
+echo "Zahajujeme automatickou instalaci i3 a konfigurace..."
 
-# Nastavení skriptů jako spustitelných
-echo "Nastavování skriptů jako spustitelných..."
-chmod +x *.sh
+# Definujeme cílový adresář pro klonování
+TARGET_DIR="$HOME/Archlinux_I3"
 
-# Instalace základních balíčků
+# Klonování repozitáře
+echo "Klonování repozitáře do $TARGET_DIR..."
+git clone https://git.arch-linux.cz/Archos/Archlinux_I3.git "$TARGET_DIR"
+
+# Přechod do adresáře repozitáře
+cd "$TARGET_DIR"
+
+# Spuštění instalace základních balíčků
 echo "Instalace základních balíčků..."
 ./install_packages.sh
 
-# Instalace AUR balíčků
+# Spuštění instalace AUR balíčků
 echo "Instalace AUR balíčků..."
 ./install_aur_package.sh
 
 # Přesun konfiguračních souborů
-echo "Aplikace konfiguračních souborů..."
+echo "Přesouvám konfigurační soubory..."
 ./move_config_files.sh
 
-echo "Instalace dokončena! Restartujte svůj systém pro aplikaci všech změn."
+# Dotaz na smazání složky s repozitářem
+read -p "Chcete smazat složku s repozitářem? (y/n) " response
+if [[ "$response" =~ ^[Yy]$ ]]
+then
+    echo "Mažu složku s repozitářem..."
+    cd ..
+    rm -rf "$TARGET_DIR"
+    echo "Složka byla smazána."
+else
+    echo "Složka nebyla smazána."
+fi
+
+echo "Instalace dokončena! Doporučujeme restartovat systém pro aplikaci všech změn."
+
