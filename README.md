@@ -70,39 +70,45 @@ Spusťte skript: Spusťte skript z terminálu příkazem
 
 ## Automatická instalace a konfigurace
 
-Pro uživatele, kteří chtějí rychle a jednoduše nastavit své prostředí i3, poskytujeme skript `auto_install_i3.sh`. Tento skript automatizuje proces instalace potřebných balíčků, nastavení AUR helperu, přesunu konfiguračních souborů do příslušných adresářů a další potřebné kroky.
+Pro uživatele, kteří chtějí rychle a jednoduše nastavit své prostředí i3, poskytujeme skript auto_install_i3.sh. Tento skript automatizuje proces instalace potřebných balíčků, nastavení AUR helperu, přesunu konfiguračních souborů do příslušných adresářů a další potřebné kroky.
+Příprava před instalací
 
-### Příprava před instalací
+### Před spuštěním skriptu auto_install_i3.sh je doporučeno:
 
-Před spuštěním skriptu `auto_install_i3.sh` je doporučeno:
-- Zkontrolovat a případně upravit skript `pacman_packages.sh` pro zahrnutí nebo vynechání specifických aplikací, které chcete nainstalovat. Tento krok je důležitý, protože výchozí seznam aplikací nemusí vyhovovat všem uživatelům.
+    Zkontrolovat a případně upravit skript pacman_packages.sh pro zahrnutí nebo vynechání specifických aplikací, které chcete nainstalovat. Tento krok je důležitý, protože výchozí seznam aplikací nemusí vyhovovat všem uživatelům.
 
-### Jak používat skript `auto_install_i3.sh`
+## Jak používat skript auto_install_i3.sh
 
-1. Stáhněte si repozitář do vašeho systému pomocí příkazu:
+1. Stáhněte skript auto_install_i3.sh do vašeho systému pomocí příkazu wget:
 
-   ```bash
-   git clone git clone https://git.arch-linux.cz/Archos/Archlinux_I3.git
-   ```
+```bash
+wget https://git.arch-linux.cz/Archos/Archlinux_I3/raw/branch/main/auto_install_i3.sh
+```
+2. Nastavte skript jako spustitelný:
 
-2. Přejděte do adresáře repozitáře:
+```bash
+chmod +x auto_install_i3.sh
+```
 
-  ```bash
-  cd Archlinux_I3
-  ```
+3. Spusťte skript:
 
-3. Nastavte skript jako spustitelný:
+```bash
+./auto_install_i3.sh
+```
 
-  ```bash
-  chmod +x auto_install_i3.sh
-  ```
+Po dokončení instalace skript vás vyzve k restartování systému, aby byly změny aplikovány. Ujistěte se, že jste uložili všechny neuložené práce před restartováním systému.
+Čištění po instalaci
 
-4. Spusťte skript:
+Po dokončení instalace a konfigurace, skript nabídne možnost odstranit klonovaný repozitář. Toto je užitečné pro uvolnění prostoru na disku, pokud již neplánujete další úpravy nebo použití skriptů z tohoto repozitáře.
 
-  ```bash
-  ./auto_install_i3.sh
-  ```
-  Po dokončení instalace skript vás vyzve k restartování systému, aby byly změny aplikovány. Ujistěte se, že jste uložili všechny neuložené práce před restartováním systému.
+- Pokud si přejete repozitář smazat, odpovězte`y`na výzvu.
+- Pokud si přejete repozitář ponechat pro budoucí použití nebo kontrolu,    odpovězte `n`.
+
+```bash
+Chcete smazat složku s repozitářem? (y/n)
+
+```
+Ujistěte se, že jste uložili všechny neuložené práce před spuštěním tohoto kroku.
 
 ## Co skript dělá
 
