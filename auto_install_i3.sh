@@ -1,4 +1,15 @@
 #!/bin/bash
+#Tento skript automatizuje proces instalace potřebných balíčků, nastavení AUR helperu, přesunu konfiguračních souborů do příslušných adresářů a další potřebné kroky.
+##################################################################################################################
+# Written to be used on 64 bits computers
+# Author 	: 	Archos
+# Website 	: 	https://arch-linux.cz
+##################################################################################################################
+##################################################################################################################
+#
+# PEČLIVĚ SKRIPT ZKONTROLUJTE. SPUŠTĚNÍ JE NA VAŠE VLASTNÍ RIZIKO.
+#
+##################################################################################################################
 
 echo "Zahajujeme automatickou instalaci i3 a konfigurace..."
 
@@ -7,10 +18,14 @@ TARGET_DIR="$HOME/Archlinux_I3"
 
 # Klonování repozitáře
 echo "Klonování repozitáře do $TARGET_DIR..."
-git clone https://git.arch-linux.cz/Archos/Archlinux_I3.git "$TARGET_DIR"
+git clone https://git.archoslinux.cz/archos/Archlinux_I3.git "$TARGET_DIR"
 
 # Přechod do adresáře repozitáře
 cd "$TARGET_DIR"
+
+# Nastaví spustitelná oprávnění pro všechny skripty
+echo "Nastavuji spustitelná oprávnění pro skripty..."
+chmod +x *.sh
 
 # Spuštění instalace základních balíčků
 echo "Instalace základních balíčků..."
