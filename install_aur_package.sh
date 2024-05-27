@@ -11,27 +11,25 @@
 #
 ##################################################################################################################
 
-# Definice cesty k repozitáři a domovského adresáře
-REPO_PATH="/path/to/cloned/repository"
-HOME_PATH="$HOME"
+package_name="autotiling picom"
 
-# Funkce pro kopírování souborů
-copy_files() {
-    src_dir=$1
-    dst_dir=$2
-    # Vytvoří cílový adresář, pokud neexistuje
-    mkdir -p "$dst_dir"
-    # Kopíruje všechny soubory z source do destination
-    cp -ar $src_dir/* $dst_dir/
-}
+# Kontrola, zda je git nainstalován
+if ! command -v git &>/dev/null; then
+    echo "Instaluji git..."
+    sudo pacman -S git --needed --noconfirm
+fi
 
-# Příklad kopírování konfiguračních souborů
-copy_files "$REPO_PATH/.config/dunst" "$HOME_PATH/.config/dunst"
-copy_files "$REPO_PATH/.config/gtk-3.0" "$HOME_PATH/.config/gtk-3.0"
-copy_files "$REPO_PATH/.config/i3" "$HOME_PATH/.config/i3"
-copy_files "$REPO_PATH/.config/nano" "$HOME_PATH/.config/nano"
-copy_files "$REPO_PATH/.config/rofi" "$HOME_PATH/.config/rofi"
-copy_files "$REPO_PATH/.config/xfce4/terminal" "$HOME_PATH/.config/xfce4/terminal"
+# Kontrola, zda je nainstalován pomocník pro AUR (např. yay)
+if ! command -v yay &>/dev/null; then
+    echo "Instaluji Yay (AUR helper)..."
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -si --noconfirm
+    cd ..
+    rm -rf yay
+fi
 
-echo "Konfigurační soubory byly úspěšně přesunuty."
+# Instalace balíčku z AUR pomocí Yay
+echo "Instaluji $package_name z AUR..."
+yay -S $package_name --noconfirm
 
