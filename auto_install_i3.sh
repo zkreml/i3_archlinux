@@ -11,6 +11,7 @@
 #
 ##################################################################################################################
 
+
 echo "Zahajujeme automatickou instalaci i3 a konfigurace..."
 
 # Definujeme cílový adresář pro klonování
@@ -23,7 +24,7 @@ git clone https://git.archoslinux.cz/archos/Archlinux_I3.git "$TARGET_DIR"
 # Přechod do adresáře repozitáře
 cd "$TARGET_DIR"
 
-# Nastaví spustitelná oprávnění pro všechny skripty
+# Nastavení spustitelných oprávnění pro všechny skripty
 echo "Nastavuji spustitelná oprávnění pro skripty..."
 chmod +x *.sh
 
@@ -34,6 +35,10 @@ echo "Instalace základních balíčků..."
 # Spuštění instalace AUR balíčků
 echo "Instalace AUR balíčků..."
 ./install_aur_package.sh
+
+# Spuštění instalace doplňkových balíčků
+echo "Instalace doplňkových balíčků..."
+./pacman_packages.sh
 
 # Přesun konfiguračních souborů
 echo "Přesouvám konfigurační soubory..."
