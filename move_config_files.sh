@@ -7,29 +7,29 @@
 ##################################################################################################################
 ##################################################################################################################
 # Definice cesty k repozitáři a domovského adresáře
-REPO_PATH="/path/to/cloned/repository"
-HOME_PATH="$HOME"
+# Získání cesty ke skriptu, předpokládáme, že je spuštěn z hlavního adresáře repozitáře
+SCRIPT_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+HOME_DIR="$HOME"
 
 # Funkce pro kopírování souborů
 copy_files() {
-    src_dir=$1
-    dst_dir=$2
-    # Vytvoří cílový adresář, pokud neexistuje
-    mkdir -p "$dst_dir"
-    # Kopíruje všechny soubory z source do destination
-    cp -ar $src_dir/* $dst_dir/
-    # Nastaví spustitelná oprávnění pro všechny skripty ve složce
-    find $dst_dir -type f -name "*.sh" -exec chmod +x {} \;
+    local src_dir=$1
+    local dst_dir=$2
+    echo "Kopírování souborů z $src_dir do $dst_dir"
+    mkdir -p "$dst_dir"  # Vytvoří cílový adresář, pokud neexistuje
+    cp -ar "$src_dir/"* "$dst_dir/"  # Kopíruje všechny soubory
+    # Nastavení spustitelných práv pro skripty
+    find "$dst_dir" -name "*.sh" -exec chmod +x {} +
 }
 
 # Příklad kopírování konfiguračních souborů
-# Předpokládá se struktura složek podobná tomu, co je v repozitáři
-copy_files "$REPO_PATH/.config/dunst" "$HOME_PATH/.config/dunst"
-copy_files "$REPO_PATH/.config/gtk-3.0" "$HOME_PATH/.config/gtk-3.0"
-copy_files "$REPO_PATH/.config/i3" "$HOME_PATH/.config/i3"
-copy_files "$REPO_PATH/.config/nano" "$HOME_PATH/.config/nano"
-copy_files "$REPO_PATH/.config/rofi" "$HOME_PATH/.config/rofi"
-copy_files "$REPO_PATH/.config/xfce4/terminal" "$HOME_PATH/.config/xfce4/terminal"
+echo "Přesouvám konfigurační soubory..."
+copy_files "$SCRIPT_DIR/.config/dunst" "$HOME_DIR/.config/dunst"
+copy_files "$SCRIPT_DIR/.config/gtk-3.0" "$HOME_DIR/.config/gtk-3.0"
+copy_files "$SCRIPT_DIR/.config/i3" "$HOME_DIR/.config/i3"
+copy_files "$SCRIPT_DIR/.config/nano" "$HOME_DIR/.config/nano"
+copy_files "$SCRIPT_DIR/.config/rofi" "$HOME_DIR/.config/rofi"
+copy_files "$SCRIPT_DIR/.config/xfce4/terminal" "$HOME_DIR/.config/xfce4/terminal"
 
 echo "Konfigurační soubory byly úspěšně přesunuty."
 
