@@ -11,50 +11,50 @@
 #
 ##################################################################################################################
 
+#!/bin/bash
 
-echo "Zahajujeme automatickou instalaci i3 a konfigurace..."
+# Příprava: Stáhne skript pomocí wget 
+# chmod +x auto_install.sh
+# ./auto_install.sh
 
-# Definujeme cílový adresář pro klonování
-TARGET_DIR="$HOME/Archlinux_I3"
+echo "Zahajujeme automatickou instalaci..."
+# Krok 3: Klonování repozitáře
+git clone https://git.arch-linux.cz/Archos/Archlinux_I3.git ~/Archlinux_I3
+cd ~/Archlinux_I3
 
-# Klonování repozitáře
-echo "Klonování repozitáře do $TARGET_DIR..."
-git clone https://git.archoslinux.cz/archos/Archlinux_I3.git "$TARGET_DIR"
-
-# Přechod do adresáře repozitáře
-cd "$TARGET_DIR"
-
-# Nastavení spustitelných oprávnění pro všechny skripty
-echo "Nastavuji spustitelná oprávnění pro skripty..."
+# Nastavení skriptů jako spustitelných
 chmod +x *.sh
 
-# Spuštění instalace základních balíčků
-echo "Instalace základních balíčků..."
+# Krok 4: Instalace základních balíčků
 ./install_packages.sh
 
-# Spuštění instalace AUR balíčků
-echo "Instalace AUR balíčků..."
-./install_aur_package.sh
-
-# Spuštění instalace doplňkových balíčků
-echo "Instalace doplňkových balíčků..."
+# Krok 5: Instalace balíčků z pacman
 ./pacman_packages.sh
 
-# Přesun konfiguračních souborů
-echo "Přesouvám konfigurační soubory..."
-./move_config_files.sh
-
-# Dotaz na smazání složky s repozitářem
-read -p "Chcete smazat složku s repozitářem? (y/n) " response
-if [[ "$response" =~ ^[Yy]$ ]]
-then
-    echo "Mažu složku s repozitářem..."
-    cd ..
-    rm -rf "$TARGET_DIR"
-    echo "Složka byla smazána."
-else
-    echo "Složka nebyla smazána."
+# Krok 6: Možnost úpravy seznamu balíčků
+echo "Chcete upravit seznam balíčků? (ano/ne)"
+read answer
+if [[ "$answer" == "ano" ]]; then
+    nano pacman_packages.sh
+    ./pacman_packages.sh # znovu spustit v případě změn
 fi
 
-echo "Instalace dokončena! Doporučujeme restartovat systém pro aplikaci všech změn."
+# Krok 7: Instalace AUR balíčků
+./install_aur_package.sh
+
+# Krok 8: Výběr AUR helperu
+echo "Preferujete YAY nebo PARU pro AUR? (yay/paru)"
+read aur_helper
+if [[ "$aur_helper" == "yay" ]]; then
+    # případná instalace yay
+    echo "Instalace yay..."
+elif [[ "$aur_helper" == "paru" ]]; then
+    # případná instalace paru
+    echo "Instalace paru..."
+fi
+
+# Krok 9: Přesun konfiguračních souborů
+./move_config_files.sh
+
+echo "Instalace dokončena! Doporučujeme restartovat systém."
 
