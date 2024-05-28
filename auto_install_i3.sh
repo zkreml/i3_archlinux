@@ -19,7 +19,10 @@
 
 echo "Zahajujeme automatickou instalaci..."
 # Krok 3: Klonování repozitáře
-git clone https://git.arch-linux.cz/Archos/Archlinux_I3.git ~/Archlinux_I3
+git clone https://git.arch-linux.cz/Archos/Archlinux_I3.git
+REPO_PATH=$(pwd)/Archlinux_I3
+echo "Repositář byl klonován do: $REPO_PATH"
+
 cd ~/Archlinux_I3
 
 # Nastavení skriptů jako spustitelných
@@ -64,14 +67,18 @@ echo "Instalace a konfigurace byly dokončeny."
 read -p "Chcete odstranit klonovaný repozitář a dočasné soubory pro uvolnění prostoru na disku? (y/n) " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]
 then
-    echo "Odstraňuji dočasné soubory a repozitář..."
-    # Příkazy pro odstranění klonovaného repozitáře a dočasných souborů
-    rm -rf /path/to/cloned/repository
-    echo "Klonovaný repozitář a dočasné soubory byly odstraněny."
+    if [ -d "$REPO_PATH" ]; then
+        echo "Odstraňuji dočasné soubory a repozitář v $REPO_PATH..."
+        rm -rf "$REPO_PATH"
+        echo "Klonovaný repozitář a dočasné soubory byly odstraněny."
+    else
+        echo "Nenalezen repozitář k odstranění v $REPO_PATH"
+    fi
 else
     echo "Klonovaný repozitář a dočasné soubory byly ponechány."
 fi
 
 echo "Restartujte prosím systém, aby byly změny aplikovány."
+
 
 
