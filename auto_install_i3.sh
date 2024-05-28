@@ -28,16 +28,17 @@ chmod +x *.sh
 # Krok 4: Instalace základních balíčků
 ./install_packages.sh
 
-# Krok 5: Instalace balíčků z pacman
-./pacman_packages.sh
-
-# Krok 6: Možnost úpravy seznamu balíčků
+# Krok 5: Možnost úpravy seznamu balíčků
 echo "Chcete upravit seznam balíčků? (ano/ne)"
 read answer
 if [[ "$answer" == "ano" ]]; then
     nano pacman_packages.sh
     ./pacman_packages.sh # znovu spustit v případě změn
 fi
+
+# Krok 6: Instalace balíčků z pacman
+./pacman_packages.sh
+
 
 # Krok 7: Instalace AUR balíčků
 ./install_aur_package.sh
