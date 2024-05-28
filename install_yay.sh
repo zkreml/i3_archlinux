@@ -11,7 +11,7 @@
 #
 ##################################################################################################################
 
-package_name="autotiling picom"
+package_name="autotiling picom papirus-icon-theme-git"
 
 # Kontrola, zda je git nainstalován
 if ! command -v git &>/dev/null; then
