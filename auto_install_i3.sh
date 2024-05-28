@@ -42,22 +42,30 @@ fi
 # Krok 6: Instalace balíčků z pacman
 ./pacman_packages.sh
 
-
-# Krok 7: Instalace AUR balíčků
-./install_aur_package.sh
-
-# Krok 8: Výběr AUR helperu
-echo "Preferujete YAY nebo PARU pro AUR? (yay/paru)"
+# Krok 7: Instalace AUR helper
+# Dotaz na preferovaný AUR helper
+echo "Preferujete 'yay' nebo 'paru' pro instalaci balíčků z AUR? (yay/paru)"
 read aur_helper
-if [[ "$aur_helper" == "yay" ]]; then
-    # případná instalace yay
-    echo "Instalace yay..."
-elif [[ "$aur_helper" == "paru" ]]; then
-    # případná instalace paru
-    echo "Instalace paru..."
-fi
 
-# Krok 9: Přesun konfiguračních souborů
+case $aur_helper in
+    yay)
+        echo "Instalace pomocí Yay..."
+        ./install_yay.sh
+        ;;
+    paru)
+        echo "Instalace pomocí Paru..."
+        ./install_paru.sh
+        ;;
+    *)
+        echo "Neplatný vstup. Skript bude ukončen."
+        exit 1
+        ;;
+esac
+
+# Následující kroky skriptu...
+
+
+# Krok 8: Přesun konfiguračních souborů
 ./move_config_files.sh
 
 # Po dokončení instalací a konfigurací
