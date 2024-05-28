@@ -57,5 +57,21 @@ fi
 # Krok 9: Přesun konfiguračních souborů
 ./move_config_files.sh
 
-echo "Instalace dokončena! Doporučujeme restartovat systém."
+# Po dokončení instalací a konfigurací
+echo "Instalace a konfigurace byly dokončeny."
+
+# Dotaz na odstranění klonovaného repozitáře
+read -p "Chcete odstranit klonovaný repozitář a dočasné soubory pro uvolnění prostoru na disku? (y/n) " response
+if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]
+then
+    echo "Odstraňuji dočasné soubory a repozitář..."
+    # Příkazy pro odstranění klonovaného repozitáře a dočasných souborů
+    rm -rf /path/to/cloned/repository
+    echo "Klonovaný repozitář a dočasné soubory byly odstraněny."
+else
+    echo "Klonovaný repozitář a dočasné soubory byly ponechány."
+fi
+
+echo "Restartujte prosím systém, aby byly změny aplikovány."
+
 
