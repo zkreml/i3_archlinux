@@ -26,6 +26,7 @@ lxappearance-gtk3
 mpv
 network-manager-applet
 numlockx
+papirus-icon-theme
 playerctl
 polkit-gnome
 rofi
