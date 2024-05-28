@@ -1,5 +1,5 @@
 #!/bin/bash
-#Tento skript je určen pro instalaci pomícníka AUR YAY a balíčků z Arch User Repository (AUR).
+#Tento skript automatizuje proces instalace potřebných balíčků, nastavení AUR helperu, přesunu konfiguračních souborů do příslušných adresářů a další potřebné kroky.
 ##################################################################################################################
 # Written to be used on 64 bits computers
 # Author 	: 	Archos
@@ -10,7 +10,7 @@
 # PEČLIVĚ SKRIPT ZKONTROLUJTE. SPUŠTĚNÍ JE NA VAŠE VLASTNÍ RIZIKO.
 #
 ##################################################################################################################
-# Název balíčku z AUR
+
 package_name="autotiling picom"
 
 # Kontrola, zda je git nainstalován
@@ -32,3 +32,4 @@ fi
 # Instalace balíčku z AUR pomocí Yay
 echo "Instaluji $package_name z AUR..."
 yay -S $package_name --noconfirm
+

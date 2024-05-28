@@ -2,7 +2,7 @@
 
 Tento projekt poskytuje skripty pro rychlou instalaci a konfiguraci základních aplikací a nástrojů nezbytných po instalaci Arch Linuxu. Hlavním cílem je ulehčit nastavení prostředí se správcem oken i3, aby byl váš systém ihned připraven k použití.
 
-![i3-setup-final-look](https://github.com/zkreml/i3_archlinux/blob/main/screenshot/i3.png)
+![i3-setup-final-look](screenshot/i3.png)
 
 ## Hlavní rysy
 
@@ -43,16 +43,23 @@ Pro stažení a instalaci projektu postupujte podle následujících kroků:
   ./install_packages.sh
    ```
 
-- **install_aur_package.sh** - Tento skript je určen pro instalaci balíčků z Arch User Repository (AUR). Nejprve ověří, zda je nainstalován `git` a pomocník pro AUR (`yay`). Pokud nejsou nainstalovány, skript je automaticky nainstaluje. Dále instaluje balíčky specifikované v proměnné `package_name`. Výchozí nastavení zahrnuje instalaci aplikací `autotiling` a `picom`, které slouží k:
-  
-  - **autotiling** - Nástroj pro automatické přepínání orientace dlaždic v i3 nebo sway podle aktuálního layoutu.
-  - **picom** - Kompozitní manažer pro Xorg, vylepšující vizuální výkon a poskytující efekty jako průhlednost a stínování oken.
+- **install_yay.sh / install_paru.sh**
 
-  Spustí se příkazem:
-  ```bash
-  ./install_aur_package.sh
-  ```
+ - Tyto skripty jsou určeny pro instalaci balíčků z Arch User Repository (AUR). Každý skript nejprve ověří, zda je nainstalován `git` a příslušný pomocník pro AUR (`yay` nebo `paru`). Pokud nejsou nainstalovány, skript je automaticky nainstaluje.
+ - Dále instaluje balíčky specifikované v proměnné `package_name`. Výchozí nastavení zahrnuje instalaci aplikací:
+    - **autotiling** - Nástroj pro automatické přepínání orientace dlaždic v i3 nebo sway podle aktuálního layoutu.
+    - **picom** - Kompozitní manažer pro Xorg, vylepšující vizuální výkon a poskytující efekty jako průhlednost a stínování oken.
+
+Spustí se příkazem (v závislosti na vaší volbě):
+
+```bash
+./install_yay.sh
+```
+ nebo
  
+```bash
+./install_paru.sh
+```
 
 - **pacman_packages.sh** - Tento skript je určen pro instalaci širokého spektra aplikací, které osobně preferuji pro každodenní použití v Arch Linuxu. Seznam aplikací obsahuje esenciální nástroje jako Firefox a Vim, multimediální aplikace jako SMPlayer a VLC, nástroje pro správu souborů jako Thunar a PCManFM, kancelářský balík LibreOffice a mnoho dalších. Skript dále aktualizuje systém před instalací balíčků, aby zajistil, že jsou instalovány nejnovější dostupné verze. Skript je nastaven tak, aby nevyžadoval potvrzení během instalace, což zrychluje proces. 
 
@@ -66,57 +73,51 @@ Spusťte skript: Spusťte skript z terminálu příkazem
 
 ```bash
   ./move_config_files.sh
-   ```
+```
 
 ## Automatická instalace a konfigurace
 
-Pro uživatele, kteří chtějí rychle a jednoduše nastavit své prostředí i3, poskytujeme skript `auto_install_i3.sh`. Tento skript automatizuje proces instalace potřebných balíčků, nastavení AUR helperu, přesunu konfiguračních souborů do příslušných adresářů a další potřebné kroky.
+- Pro uživatele, kteří preferují rychlou a snadnou inicializaci svého prostředí s i3, je zde skript auto_install_i3.sh. Tento skript automatizuje několik klíčových kroků:
 
-### Příprava před instalací
+- Instalaci základních a doplňkových balíčků potřebných pro běh i3.
+- Nastavení AUR helperu pro jednodušší správu balíčků z AUR.
+- Přesun konfiguračních souborů do příslušných adresářů v uživatelově domovském adresáři.
+- Konfiguraci programů jako dunst a rofi pro správu notifikací a spouštění aplikací.
 
-Před spuštěním skriptu `auto_install_i3.sh` je doporučeno:
-- Zkontrolovat a případně upravit skript `pacman_packages.sh` pro zahrnutí nebo vynechání specifických aplikací, které chcete nainstalovat. Tento krok je důležitý, protože výchozí seznam aplikací nemusí vyhovovat všem uživatelům.
+### Jak používat skript auto_install_i3.sh
 
-### Jak používat skript `auto_install_i3.sh`
+1. Stáhněte skript do vašeho systému pomocí příkazu:
 
-1. Stáhněte si repozitář do vašeho systému pomocí příkazu:
+```bash
+wget https://git.arch-linux.cz/Archos/Archlinux_I3/raw/branch/main/auto_install_i3.sh
+```
+2. Nastavte skript jako spustitelný:
 
-   ```bash
-   git clone git clone https://git.arch-linux.cz/Archos/Archlinux_I3.git
-   ```
+```bash
+chmod +x auto_install_i3.sh
+```
+3. Spusťte skript:
 
-2. Přejděte do adresáře repozitáře:
+```bash
+./auto_install_i3.sh
+```
+Skript vám nabídne možnost upravit seznam balíčků před jejich instalací a zvolit mezi nástroji pro správu [AUR](https://wiki.archlinux.org/title/Arch_User_Repository), jako jsou Yay nebo Paru.
+Po dokončení instalace
 
-  ```bash
-  cd Archlinux_I3
-  ```
+Po úspěšném dokončení instalace vás skript vyzve k restartování systému, aby byly změny aplikovány. Ujistěte se, že jste uložili všechny neuložené práce před restartováním systému.
 
-3. Nastavte skript jako spustitelný:
+### Čištění po instalaci
 
-  ```bash
-  chmod +x auto_install_i3.sh
-  ```
+Skript nabízí možnost odstranit klonovaný repozitář a dočasné soubory, což uvolní prostor na disku. Toto je užitečné, pokud již neplánujete další úpravy nebo použití skriptů z tohoto repozitáře.
 
-4. Spusťte skript:
+- Pokud si přejete repozitář smazat, odpovězte `y` na výzvu.
+- Pokud si přejete repozitář ponechat pro budoucí použití nebo kontrolu, odpovězte `n`
 
-  ```bash
-  ./auto_install_i3.sh
-  ```
-  Po dokončení instalace skript vás vyzve k restartování systému, aby byly změny aplikovány. Ujistěte se, že jste uložili všechny neuložené práce před restartováním systému.
-
-## Co skript dělá
-
-Skript auto_install_i3.sh provádí následující úkony:
-
- - Instaluje základní balíčky potřebné pro běh i3 a doplňkové aplikace.
- - Instaluje a konfiguruje AUR helper pro snazší správu balíčků z AUR.
- - Přesouvá konfigurační soubory z repozitáře do příslušných adresářů ve vašem domovském adresáři.
- - Nastavuje programy jako dunst a rofi pro správu notifikací a spouštění aplikací.
-
-
-
+```bash
+Chcete smazat složku s repozitářem? (y/n)
+```
 ## Struktura Konfigurační Složky
-
+ 
 Projekt obsahuje klíčové konfigurační složky v adresáři .config, které jsou zásadní pro nastavení a personalizaci vašeho systému. Mnohé z těchto konfiguračních souborů jsou inspirovány nebo přímo převzaty z projektu EndeavourOS, což přináší osvědčené nastavení pro Arch Linux a jeho deriváty. Každá složka má specifický účel:
 
 ### `/dunst`
@@ -283,6 +284,3 @@ exec_always --no-startup-id conky
 ```
 
 Tento příkaz zajistí, že Conky bude spuštěno vždy po spuštění nebo restartu i3.
-
-
-
