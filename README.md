@@ -229,12 +229,13 @@ Pro  zjištění aktuálního uživatelského ID (UID) přihlášeného uživate
 exec_always --no-startup-id /path/to/update_notifier.sh
   ```
 
-&#x2022; Pro snadné spouštění aktualizací můžete přidat klávesovou zkratku do vašeho i3 konfiguračního souboru:
+### Spouštění aktualizací pomocí i3 klávesové zkratky
+Ve složce `utilities` se nachází skript `update_yay.sh`, který slouží k automatickému spuštění aktualizací. Pro snadné použití přidejte následující zkratku do i3 konfiguračního souboru:
+```bash
+bindsym $mod+Shift+u exec ~/utilities/update_yay.sh
+```
+Tímto způsobem budete moci spustit aktualizace jednoduše pomocí klávesové zkratky.
 
-  ```bash
-bindsym $mod+Shift+u exec i3-sensible-terminal -e "yay -Syu"
-  ```
-  
 ### Nastavení tapety v i3 pomocí feh
 
 Pro nastavení tapety na pracovní ploše i3 můžete použít nástroj feh. feh je lehký prohlížeč obrázků, který lze také použít k nastavení pozadí plochy.
