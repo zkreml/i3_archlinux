@@ -9,6 +9,7 @@ dunst
 xfce4-terminal-colors
 feh
 galculator
+gvfs-dnssd
 gvfs
 gvfs-afc
 gvfs-gphoto2
