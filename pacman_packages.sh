@@ -13,7 +13,7 @@
 # Aktualizace systému
 
 # Seznam balíčků k instalaci pomocí pacman
-pacman_packages="firefox vim git htop darktable geeqie smplayer vlc thunar pcmanfm thunar-archive-plugin firefox  transmission-gtk libreoffice-fresh libreoffice-fresh-cs gnome-calculator pluma p7zip unrar tar rsync cryfs rapid-photo-downloader gthumb gimp wireguard-tools  nextcloud-client  flatpak catfish totem borg borgmatic gnome-disk-utility gparted python-llfuse sshfs simple-scan evince neofetch geany gnome-screenshot filezilla networkmanager-openvpn passff-host  firefox-i18n-cs thunderbird thunderbird-i18n-cs wget yajl bitwarden"
+pacman_packages="firefox vim git htop darktable geeqie smplayer vlc thunar pcmanfm thunar-archive-plugin firefox  transmission-gtk libreoffice-fresh libreoffice-fresh-cs gnome-calculator pluma p7zip unrar tar rsync cryfs rapid-photo-downloader gthumb gimp wireguard-tools  nextcloud-client  flatpak catfish totem borg borgmatic gnome-disk-utility gparted python-llfuse sshfs simple-scan evince neofetch geany gnome-screenshot filezilla networkmanager-openvpn passff-host  firefox-i18n-cs thunderbird thunderbird-i18n-cs wget yajl bitwarden cronie  noto-fonts-extra  picom pacman-contrib seahorse volumeicon"
 
 # Aktualizace systému a instalace balíčků
 echo "Aktualizuji systém a instaluji základní balíčky..."
