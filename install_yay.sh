@@ -11,7 +11,7 @@
 #
 ##################################################################################################################
 
-package_name="autotiling picom imagewriter ttf-openlogos-archupdate nerd-fonts-complete"
+package_name="autotiling picom imagewriter ttf-openlogos-archupdate nerd-fonts-complete ttf-firacode-nerd ttf-jetbrains-mono-nerd ttf-hack-nerd"
 
 # Kontrola, zda je git nainstalován
 if ! command -v git &>/dev/null; then

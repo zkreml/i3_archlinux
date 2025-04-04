@@ -45,4 +45,5 @@ xed
 xfce4-terminal
 xorg-xbacklight
 xorg-xdpyinfo
+wezterm 
 zip
