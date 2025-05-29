@@ -1,12 +1,10 @@
 acpi
 arandr
-arc-gtk-theme
 archlinux-xdg-menu
 awesome-terminal-fonts
 dex
 dmenu
 dunst
-xfce4-terminal-colors
 feh
 galculator
 gvfs-dnssd
