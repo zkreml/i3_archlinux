@@ -1,6 +1,7 @@
 acpi
 arandr
 archlinux-xdg-menu
+alsa-utils
 awesome-terminal-fonts
 dex
 dmenu
