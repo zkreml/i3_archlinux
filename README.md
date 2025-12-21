@@ -237,7 +237,7 @@ Pro  zjištění aktuálního uživatelského ID (UID) přihlášeného uživate
  2. Přidejte následující řádek pro spouštění system_updates.sh každou hodinu.
 
   ```bash
-/59 * * * * /cesta/k/update_notifier.sh
+59 * * * * /cesta/k/update_notifier.sh
   ```
 
 ### Přidání notifikací do i3 config
